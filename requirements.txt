@@ -1,8 +1,6 @@
-streamlit
-pandas
-matplotlib
-altair
-pydeck
-numpy
-plotly
-st-aggrid
+streamlit==1.45.0
+numpy==1.23.0
+pandas==2.2.3
+matplotlib==3.10.1
+plotly==6.0.1
+streamlit-aggrid==1.1.4.post1
