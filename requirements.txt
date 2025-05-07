@@ -5,3 +5,4 @@ altair
 pydeck
 numpy
 plotly
+st-aggrid
