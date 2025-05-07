@@ -28,6 +28,9 @@ color = st.sidebar.color_picker("Pick a bar color", "#00f900", key="color_picker
 # Main content
 st.title("Life Expectancy Visualization")
 
+# Add the description about the app
+st.write("This app visualizes the life expectancy data of Sri Lanka from 1950 to 2100. You can select different years, chart types, and customize the bar color.")
+
 # Display data table
 st.write("Displaying the data table:")
 AgGrid(data, height=350, fit_columns_on_grid_load=True)
