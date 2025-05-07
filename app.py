@@ -3,6 +3,7 @@ import pandas as pd
 import plotly.express as px
 from st_aggrid import AgGrid
 import matplotlib.pyplot as plt
+import numpy as np  # Import numpy if you need it
 
 # Load the dataset
 data = pd.read_csv("Cleaned_SriLanka_Data.csv")
