@@ -3,17 +3,17 @@ import pandas as pd
 import plotly.express as px
 from st_aggrid import AgGrid
 import matplotlib.pyplot as plt
-import numpy as np  # Import numpy if you need it
+import numpy as np  
 
 # Load the dataset
 data = pd.read_csv("Cleaned_SriLanka_Data.csv")
 
-# Set up sidebar
+# Set up sideebar
 st.sidebar.title("Dashboard Sidebar")
 st.sidebar.subheader("Select Options")
 
 # Sidebar filters or selection options
-chart_type = st.sidebar.selectbox("Select Chart Type", ["Bar Chart", "Line Chart"], key="chart_type_selectbox")  # Added unique key
+chart_type = st.sidebar.selectbox("Select Chart Type", ["Bar Chart", "Line Chart"], key="chart_type_selectbox")  
 min_year = int(data["Year(s)"].min())
 max_year = int(data["Year(s)"].max())
 
@@ -28,7 +28,7 @@ color = st.sidebar.color_picker("Pick a bar color", "#00f900", key="color_picker
 # Main content
 st.title("Life Expectancy Visualization")
 
-# Add the description about the app
+# Add the discription about the app
 st.write("This dashboard visualizes the life expectancy data of Sri Lanka from 1950 to 2100. You can select different years, chart types, and customize the bar color.")
 
 # Display data table
@@ -57,7 +57,7 @@ fig = px.bar(filtered_data,
              hover_data=["Year(s)", "Value"], 
              labels={"Year(s)": "Year", "Value": "Value"}, 
              title="Year vs Value")
-st.plotly_chart(fig, key="plotly_chart_1")  # Adding unique key for Plotly chart
+st.plotly_chart(fig, key="plotly_chart_1")  
 
 # Create a customized Plotly chart based on selected chart type
 if chart_type == "Bar Chart":
@@ -68,7 +68,7 @@ if chart_type == "Bar Chart":
                  labels={"Year(s)": "Year", "Value": "Value"}, 
                  title="Year vs Value", 
                  color_discrete_sequence=[color])
-    st.plotly_chart(fig, key="plotly_chart_2")  # Adding unique key for Bar Chart
+    st.plotly_chart(fig, key="plotly_chart_2")  
 elif chart_type == "Line Chart":
     fig = px.line(filtered_data, 
                   x="Year(s)", 
@@ -77,7 +77,7 @@ elif chart_type == "Line Chart":
                   labels={"Year(s)": "Year", "Value": "Value"}, 
                   title="Year vs Value", 
                   color_discrete_sequence=[color])
-    st.plotly_chart(fig, key="plotly_chart_3")  # Adding unique key for Line Chart
+    st.plotly_chart(fig, key="plotly_chart_3")  
 
 # Footer 
 st.markdown("---")
