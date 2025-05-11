@@ -15,7 +15,7 @@ import pandas as pd
 # Load the dataset into a DataFrame
 df = pd.read_csv('/content/UNdata_Export_20250504_174459230.csv')
 
-# Check the first few rows to verify
+# Check the fist few rows 
 df.head()
 
 # Check for missing values in the dataset
@@ -27,16 +27,16 @@ missing_values
 # Check the data types of each column
 df.dtypes
 
-# Fill the missing value in the 'Value' column with the mean of the column
+# Fill the missing value 
 df['Value'].fillna(df['Value'].mean(), inplace=True)
 
 # Check if the missing value is now filled
 df.isnull().sum()
 
-# Save the cleaned dataset to a new CSV file in Google Colab
+# Save the cleaned dataset to a new CSV file 
 df.to_csv('/content/Cleaned_SriLanka_Data.csv', index=False)
 
 from google.colab import files
 
-# Download the saved file
+# Download
 files.download('/content/Cleaned_SriLanka_Data.csv')
